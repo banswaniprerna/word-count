@@ -1,0 +1,51 @@
+<!-- cc-character count
+  wc-word count --> 
+
+<html>
+	
+	<head>
+	<title>CW Counter </title>
+
+	<link rel="stylesheet" href="c1.css">
+
+	<head>
+	
+	<body>
+	<center>
+	<h1> CW Counter</h1>
+
+	<form>
+	<textarea plceholder="enter text" rows=5 cols=30 id="txt"></textarea>
+			<!-- YEH TAG EK TEXT BOX BANA TA HAI JISMAI WE CAN TYPE.  	 -->	
+
+	</form>
+	<h1 id="msg"></h1>
+
+	<script>
+	
+	let txt=document.getElementById("txt");
+	let msg=document.getElementById("msg");
+	
+	txt.addEventListener("input", function(){  //addEvent KE ANDAR JO INPUT HAI, AGAR KOI INPUT DALEGA SITE PE 							     TOH HI AAGE KA FUNCTION CHALEGA. function() KOI EK ANONYMOUS FUN 						     HAI. 	
+	let t=txt.value.trim();
+
+	//let cc=t.length;   //ismai spaces bhi count honge
+          let cc=t.split(" ").join("").length;	
+
+	let wc=0;
+	if(cc==0)
+	wc=0;
+	else
+	wc=t.split(" ").length;
+	// suppose string t="prerna banswani"
+	//t.split("")	=> 'p','r','e','r','n','a','b','a','n','s','w','a','n','i'
+	//t.split(" ")	=> ' prerna ',' banswani '
+	
+	let ans="cc =" + cc + "wc =" + wc;
+	msg.innerHTML=ans;
+	});
+	
+	</script>
+	
+	</center>
+	</body>
